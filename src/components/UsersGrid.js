@@ -23,11 +23,11 @@ export const UsersGrid = ({ setSelectedUser, setModalIsOpen }) => {
     }
 
     const getRandomUsers = async () => {
-        const data = await fetch('https://randomuser.me/api/?results=70')
+        const data = await fetch('https://randomuser.me/api/?results=50')
         const response = await data.json()
         const usersData = response.results
         
-        setUsers(removeDuplicateUsers(usersData))
+        setUsers([...users, ...removeDuplicateUsers(usersData)])
     }
 
     return (
