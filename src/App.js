@@ -15,13 +15,15 @@ function App() {
   return (
     <div className='App'>
       <Title/>
-      <UsersGrid setSelectedUser={setSelectedUser} setModalIsOpen={setModalIsOpen}/>
+      <UsersGrid
+        setSelectedUser={setSelectedUser}
+        setModalIsOpen={setModalIsOpen}
+      />
 
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         style={{
-          overlay: {},
           content: {
             position: 'absolute',
             top: '9%',
