@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 export const UsersGrid = ({ setSelectedUser, setModalIsOpen }) => {
 
@@ -31,35 +32,42 @@ export const UsersGrid = ({ setSelectedUser, setModalIsOpen }) => {
     }
 
     return (
-        <div className='img-grid'>
-            {users &&
-                users.map(user => (
-                    <div 
-                        className='img-wrap'
-                        key={user.id.value}
-                        onClick={() => {
-                            setSelectedUser(user)
-                            setModalIsOpen(true)
-                        }}
-                    >
-                        <img 
-                            alt={user.name.first}
-                            src={user.picture.large}
-                        />
-                        <div className='img-description'>
-                            <p className='img-description-name'>
-                                <strong>
-                                    {user.name.first} {user.name.last}
-                                </strong>
-                            </p>
-                            <p className='img-description-location'>
-                                {user.location.city}, {user.location.state}
-                            </p>
+        <InfiniteScroll
+            dataLength={users.length}
+            next={getRandomUsers}
+            hasMore={true}
+            loader={<h4>Loading...</h4>}
+        >
+            <div className='img-grid'>
+                {users &&
+                    users.map((user, index) => (
+                        <div 
+                            className='img-wrap'
+                            key={index + '' + user.id.value}
+                            onClick={() => {
+                                setSelectedUser(user)
+                                setModalIsOpen(true)
+                            }}
+                        >
+                            <img 
+                                alt={user.name.first}
+                                src={user.picture.large}
+                            />
+                            <div className='img-description'>
+                                <p className='img-description-name'>
+                                    <strong>
+                                        {user.name.first} {user.name.last}
+                                    </strong>
+                                </p>
+                                <p className='img-description-location'>
+                                    {user.location.city}, {user.location.state}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))
-            }
-        </div>
+                    ))
+                }
+            </div>
+        </InfiniteScroll>
     )
 
 }

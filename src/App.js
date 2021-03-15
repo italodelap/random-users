@@ -24,10 +24,10 @@ function App() {
           overlay: {},
           content: {
             position: 'absolute',
-            top: 75,
-            right: 450,
-            bottom: 75,
-            left: 450,
+            top: '9%',
+            right: '28%',
+            bottom: '9%',
+            left: '28%',
             borderRadius: '25px'
           }
         }}
