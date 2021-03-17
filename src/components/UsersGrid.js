@@ -7,6 +7,7 @@ export const UsersGrid = ({ setSelectedUser, setModalIsOpen }) => {
 
     useEffect(() => {
         getRandomUsers()
+        // eslint-disable-next-line
     }, [])
 
     const removeDuplicateUsers = (duplicateUsers) => {
