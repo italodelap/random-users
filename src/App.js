@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 
-import { Title } from './components/Title'
+import { Header } from './components/Header'
 import { UsersGrid } from './components/UsersGrid'
 import { User } from './components/User'
 
@@ -14,7 +14,7 @@ function App() {
   
   return (
     <div className='App'>
-      <Title/>
+      <Header/>
       <UsersGrid
         setSelectedUser={setSelectedUser}
         setModalIsOpen={setModalIsOpen}
