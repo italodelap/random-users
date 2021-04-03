@@ -1,7 +1,7 @@
 import React from 'react'
+import Info from './Info'
 
-export const User = ({ selectedUser }) => {
-    
+export default function User ({ selectedUser }) {
     return (
         <table className='modal-data' align='center'>
           <tbody>
@@ -15,26 +15,26 @@ export const User = ({ selectedUser }) => {
               </td>
             </tr>
             <tr>
-              <td> <strong>Username</strong> <br/> {selectedUser && selectedUser.login.username} </td>
-              <td> <strong>Email address</strong> <br/> {selectedUser && selectedUser.email} </td>
+              <Info label='Username' data='selectedUser.login.username'></Info>
+              <Info label='Email address' data={selectedUser.email}></Info>
             </tr>
             <tr>
-              <td> <strong>First name</strong> <br/> {selectedUser && selectedUser.name.first} </td>
-              <td> <strong>Last name</strong> <br/> {selectedUser && selectedUser.name.last} </td>
+              <Info label='First name' data={selectedUser.name.first}></Info>
+              <Info label='Last name' data={selectedUser.name.last}></Info>
             </tr>
             <tr>
-              <td> <strong>Age</strong> <br/> {selectedUser && selectedUser.dob.age} </td>
-              <td> <strong>Cell</strong> <br/> {selectedUser && selectedUser.cell} </td>
+              <Info label='Age' data={selectedUser.dob.age}></Info>
+              <Info label='Cell' data={selectedUser.cell}></Info>
             </tr>
             <tr>
-              <td>
-                <strong>Location</strong> <br/>
-                {selectedUser && (selectedUser.location.street.name + ' ' + selectedUser.location.street.number)}
-              </td>
-              <td> <strong>Phone</strong> <br/> {selectedUser && selectedUser.phone} </td>
+              <Info
+                label='Location'
+                data={selectedUser.location.street.name + ' ' + selectedUser.location.street.number}
+              >
+              </Info>
+              <Info label='Phone' data={selectedUser.phone}></Info>
             </tr>
           </tbody>
         </table>
     )
-
 }
