@@ -15,7 +15,7 @@ export default function User ({ selectedUser }) {
               </td>
             </tr>
             <tr>
-              <Info label='Username' data='selectedUser.login.username'></Info>
+              <Info label='Username' data={selectedUser.login.username}></Info>
               <Info label='Email address' data={selectedUser.email}></Info>
             </tr>
             <tr>
