@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
-export const UsersGrid = ({ setSelectedUser, setModalIsOpen }) => {
+export default function UsersGrid ({ setSelectedUser, setModalIsOpen }) {
 
     const [users, setUsers] = useState([])
 
