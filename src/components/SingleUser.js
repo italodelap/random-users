@@ -1,7 +1,7 @@
 import React from 'react'
-import Info from './Info'
+import TableCell from './TableCell'
 
-export default function User ({ selectedUser }) {
+export default function SingleUser ({ selectedUser }) {
   const userLocation = `${selectedUser.location.street.name} ${selectedUser.location.street.number}`
 
   return (
@@ -17,23 +17,23 @@ export default function User ({ selectedUser }) {
           </td>
         </tr>
         <tr>
-          <Info label='Username' data={selectedUser.login.username}/>
-          <Info label='Email address' data={selectedUser.email}/>
+          <TableCell label='Username' data={selectedUser.login.username}/>
+          <TableCell label='Email address' data={selectedUser.email}/>
         </tr>
         <tr>
-          <Info label='First name' data={selectedUser.name.first}/>
-          <Info label='Last name' data={selectedUser.name.last}/>
+          <TableCell label='First name' data={selectedUser.name.first}/>
+          <TableCell label='Last name' data={selectedUser.name.last}/>
         </tr>
         <tr>
-          <Info label='Age' data={selectedUser.dob.age}/>
-          <Info label='Cell' data={selectedUser.cell}/>
+          <TableCell label='Age' data={selectedUser.dob.age}/>
+          <TableCell label='Cell' data={selectedUser.cell}/>
         </tr>
         <tr>
-          <Info
+          <TableCell
             label='Location'
             data={userLocation}
           />
-          <Info label='Phone' data={selectedUser.phone}/>
+          <TableCell label='Phone' data={selectedUser.phone}/>
         </tr>
       </tbody>
     </table>

@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 
 import Header from './components/Header'
 import UsersGrid from './components/UsersGrid'
-import User from './components/User'
+import SingleUser from './components/SingleUser'
 
 Modal.setAppElement('#root')
 
@@ -35,7 +35,7 @@ function App() {
         }}
       >
         <button className='button-close-modal' onClick={() => setModalIsOpen(false)}>X</button>
-        <User selectedUser={selectedUser} />
+        <SingleUser selectedUser={selectedUser} />
       </Modal>
     </div>
   )

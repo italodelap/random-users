@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Info ({label, data}) {
+export default function TableCell ({label, data}) {
     return (
         <td>
             <strong>{ label }</strong>
