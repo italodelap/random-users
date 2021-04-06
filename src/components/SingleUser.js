@@ -1,9 +1,7 @@
 import React from 'react'
-import TableCell from './TableCell'
+import UserData from './UserData'
 
 export default function SingleUser ({ selectedUser }) {
-  const userLocation = `${selectedUser.location.street.name} ${selectedUser.location.street.number}`
-
   return (
     <table className='modal-data' align='center'>
       <tbody>
@@ -16,25 +14,7 @@ export default function SingleUser ({ selectedUser }) {
             />
           </td>
         </tr>
-        <tr>
-          <TableCell label='Username' data={selectedUser.login.username}/>
-          <TableCell label='Email address' data={selectedUser.email}/>
-        </tr>
-        <tr>
-          <TableCell label='First name' data={selectedUser.name.first}/>
-          <TableCell label='Last name' data={selectedUser.name.last}/>
-        </tr>
-        <tr>
-          <TableCell label='Age' data={selectedUser.dob.age}/>
-          <TableCell label='Cell' data={selectedUser.cell}/>
-        </tr>
-        <tr>
-          <TableCell
-            label='Location'
-            data={userLocation}
-          />
-          <TableCell label='Phone' data={selectedUser.phone}/>
-        </tr>
+        <UserData user={selectedUser} />
       </tbody>
     </table>
   )
