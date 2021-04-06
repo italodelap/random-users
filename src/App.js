@@ -8,38 +8,34 @@ import SingleUser from './components/SingleUser'
 Modal.setAppElement('#root')
 
 function App() {
-
   const [selectedUser, setSelectedUser] = useState(null)
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const styles = {
+    modal: {
+      position: 'absolute',
+      top: '9%',
+      right: '28%',
+      bottom: '9%',
+      left: '28%',
+      borderRadius: '25px'
+    }
+  }
   
   return (
     <div className='App'>
       <Header/>
-      <UsersGrid
-        setSelectedUser={setSelectedUser}
-        setModalIsOpen={setModalIsOpen}
-      />
+      <UsersGrid setSelectedUser={setSelectedUser} setModalIsOpen={setModalIsOpen} />
 
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
-        style={{
-          content: {
-            position: 'absolute',
-            top: '9%',
-            right: '28%',
-            bottom: '9%',
-            left: '28%',
-            borderRadius: '25px'
-          }
-        }}
+        style={{ content: styles.modal }}
       >
         <button className='button-close-modal' onClick={() => setModalIsOpen(false)}>X</button>
         <SingleUser selectedUser={selectedUser} />
       </Modal>
     </div>
   )
-
 }
 
 export default App
