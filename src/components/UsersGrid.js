@@ -9,8 +9,6 @@ export default function UsersGrid({ setSelectedUser, setModalIsOpen }) {
     // eslint-disable-next-line
   }, [])
 
-  // La dependencia podría ser 'users'?
-
   const getRandomUsers = async () => {
     const data = await fetch("https://randomuser.me/api/?results=50")
     const response = await data.json()
