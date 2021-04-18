@@ -4,7 +4,7 @@ import UserThumbnail from './UserThumbnail'
 
 export default function UsersGrid({ setSelectedUser, setModalIsOpen }) {
   const [users, setUsers] = useState([])
-  
+
   useEffect(() => {
     getRandomUsers()
     // eslint-disable-next-line
@@ -18,11 +18,6 @@ export default function UsersGrid({ setSelectedUser, setModalIsOpen }) {
     setUsers([...users, ...usersData])
   }
 
-  const openModal = (user) => {
-    setSelectedUser(user)
-    setModalIsOpen(true)
-  }
-
   return (
     <InfiniteScroll
       dataLength={users.length}
@@ -32,12 +27,15 @@ export default function UsersGrid({ setSelectedUser, setModalIsOpen }) {
     >
       <div className='img-grid'>
         {users && users.map(user => (
-          <div className='img-wrap' key={user.id.value} onClick={openModal(user)}>
-            <UserThumbnail
-              name={user.name}
-              picture={user.picture.large}
-              location={user.location}
-            />
+          <div
+            className='img-wrap'
+            key={user.id.value}
+            onClick={() => {
+              setSelectedUser(user)
+              setModalIsOpen(true)
+            }}
+          >
+            <UserThumbnail name={user.name} picture={user.picture.large} location={user.location} />
           </div>
         ))}
       </div>
