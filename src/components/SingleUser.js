@@ -1,5 +1,4 @@
 import React from 'react'
-
 import UserProfilePicture from './UserProfilePicture'
 import UserData from './UserData'
 

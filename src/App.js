@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
-
 import Header from './components/Header'
 import UsersGrid from './components/UsersGrid'
 import SingleUser from './components/SingleUser'

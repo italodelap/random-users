@@ -6,12 +6,12 @@ export default function UsersGrid({ setSelectedUser, setModalIsOpen }) {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    getRandomUsers()
+    getUsers()
     // eslint-disable-next-line
   }, [])
 
-  const getRandomUsers = async () => {
-    const data = await fetch("https://randomuser.me/api/?results=50")
+  const getUsers = async () => {
+    const data = await fetch('https://randomuser.me/api/?results=50')
     const response = await data.json()
     const usersData = response.results.filter(user => user.id.value != null)
     
@@ -21,7 +21,7 @@ export default function UsersGrid({ setSelectedUser, setModalIsOpen }) {
   return (
     <InfiniteScroll
       dataLength={users.length}
-      next={getRandomUsers}
+      next={getUsers}
       hasMore={true}
       loader={<h4>Loading...</h4>}
     >
