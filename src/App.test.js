@@ -2,7 +2,7 @@ import React from 'react'
 import App from './App'
 
 import '@testing-library/jest-dom/extend-expect'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 
 describe('true is truthy and false is falsy', () => {
   test('true is truthy', () => {
@@ -16,8 +16,8 @@ describe('true is truthy and false is falsy', () => {
 
 describe('<App />', () => {
   test('should renders content', () => {
-    render(<App />)
-    const label = screen.getByText('Code challenge!')
-    expect(label).toBeInTheDocument()
+    const component = render(<App />)
+    const element = component.getByText('Code challenge!')
+    expect(element).toBeDefined()
   })
 })
