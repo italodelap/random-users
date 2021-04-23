@@ -4,7 +4,7 @@ import Header from './components/Header'
 import UsersGrid from './components/UsersGrid'
 import SingleUser from './components/SingleUser'
 
-Modal.setAppElement('#root')
+Modal.setAppElement(document.getElementById('root'))
 
 function App() {
   const [selectedUser, setSelectedUser] = useState(null)
