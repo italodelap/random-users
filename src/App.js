@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import Header from './components/Header'
 import UsersGrid from './components/UsersGrid'
-import SingleUser from './components/SingleUser'
+import ModalUser from './components/ModalUser'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -31,7 +31,7 @@ function App() {
         style={{ content: styles.modal }}
       >
         <button className='button-close-modal' onClick={() => setModalIsOpen(false)}>X</button>
-        <SingleUser selectedUser={selectedUser} />
+        <ModalUser selectedUser={selectedUser} />
       </Modal>
     </div>
   )
