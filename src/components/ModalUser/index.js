@@ -1,6 +1,6 @@
 import React from 'react'
 import UserProfilePicture from '../UserProfilePicture'
-import UserData from '../UserData'
+import ModalUserData from '../ModalUserData'
 
 export default function ModalUser ({ selectedUser }) {
   return (
@@ -10,7 +10,7 @@ export default function ModalUser ({ selectedUser }) {
           picture={selectedUser.picture.large}
           name={selectedUser.name.first}
         />
-        <UserData user={selectedUser} />
+        <ModalUserData user={selectedUser} />
       </tbody>
     </table>
   )
