@@ -1,8 +1,8 @@
 import React from 'react'
-import UserProfilePicture from '../UserProfilePicture'
-import ModalUserData from '../ModalUserData'
+import { UserProfilePicture } from '../UserProfilePicture'
+import { ModalUserData } from '../ModalUserData'
 
-export default function ModalUser ({ selectedUser }) {
+export function ModalUser ({ selectedUser }) {
   return (
     <table className='modal-data' align='center'>
       <tbody>

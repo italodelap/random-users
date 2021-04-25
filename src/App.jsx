@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
-import Header from './components/Header'
-import UsersGrid from './components/UsersGrid'
-import ModalUser from './components/ModalUser'
+import { Header } from './components/Header'
+import { UsersGrid } from './components/UsersGrid'
+import { ModalUser } from './components/ModalUser'
 
 Modal.setAppElement(document.getElementById('root'))
 
-function App() {
+export function App() {
   const [selectedUser, setSelectedUser] = useState(null)
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const styles = {

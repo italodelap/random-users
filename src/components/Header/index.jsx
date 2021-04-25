@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header() {
+export function Header() {
   return (
     <div className='header'>
       <h1>Code challenge!</h1>

@@ -1,7 +1,7 @@
 import React from 'react'
-import TableCell from '../TableCell'
+import { TableCell } from '../TableCell'
 
-export default function ModalUserData({ user }) {
+export function ModalUserData({ user }) {
   const userLocation = `${user.location.street.name} ${user.location.street.number}`
   return (
     <>

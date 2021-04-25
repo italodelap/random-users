@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UserProfilePicture({ picture, name }) {
+export function UserProfilePicture({ picture, name }) {
   return (
     <tr>
       <td colSpan='2'>

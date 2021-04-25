@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function User({ userInfo, selectUser }) {
+export function User({ userInfo, selectUser }) {
   const { picture, name, location } = userInfo
   
   return (
