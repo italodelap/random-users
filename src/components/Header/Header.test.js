@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
 
 describe('<Header />', () => {
-  test('should renders content', () => {
+  test('renders content', () => {
     const component = render(<Header />)
     const element = component.getByText('Random User API')
     expect(element).toBeDefined()
