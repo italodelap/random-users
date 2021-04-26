@@ -9,15 +9,9 @@ Modal.setAppElement(document.getElementById('root'))
 export function App() {
   const [selectedUser, setSelectedUser] = useState(null)
   const [modalIsOpen, setModalIsOpen] = useState(false)
-  const styles = {
-    modal: {
-      position: 'absolute',
-      top: '9%',
-      right: '28%',
-      bottom: '9%',
-      left: '28%',
-      borderRadius: '25px'
-    }
+  const modalStyles = {
+    position: 'absolute', borderRadius: '25px',
+    top: '9%', right: '28%', bottom: '9%', left: '28%'
   }
   
   return (
@@ -28,7 +22,7 @@ export function App() {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
-        style={{ content: styles.modal }}
+        style={{ content: modalStyles }}
       >
         <button className='button-close-modal' onClick={() => setModalIsOpen(false)}>X</button>
         <ModalUser selectedUser={selectedUser} />
@@ -36,5 +30,3 @@ export function App() {
     </div>
   )
 }
-
-export default App
