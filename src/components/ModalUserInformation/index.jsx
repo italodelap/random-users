@@ -1,22 +1,17 @@
 import React from 'react'
 import { ModalUserData } from '../ModalUserData'
+import { ModalUserPicture } from '../ModalUserPicture'
 
 export function ModalUserInformation ({ selectedUser }) {
+  const picture = selectedUser.picture.large
+  const firstName = selectedUser.name.first
   const streetName = selectedUser.location.street.name
   const streetNumber = selectedUser.location.street.number
 
   return (
     <table className='modal-data' align='center'>
       <tbody>
-        <tr>
-          <td colSpan='2'>
-            <img
-              className='modal-image'
-              src={selectedUser.picture.large}
-              alt={selectedUser.name.first}
-            />
-          </td>
-        </tr>
+        <ModalUserPicture picture={picture} userFirstName={firstName} />
         <tr>
           <ModalUserData label='Username' data={selectedUser.login.username} />
           <ModalUserData label='Email address' data={selectedUser.email} />
