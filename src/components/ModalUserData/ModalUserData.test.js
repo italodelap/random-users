@@ -1,9 +1,9 @@
 import React from 'react'
-import { TableCell } from './index'
+import { ModalUserData } from './index'
 
 import { render } from '@testing-library/react'
 
-describe('<TableCell />', () => {
+describe('<ModalUserData />', () => {
   let component
   const td = { label: 'Name', data: 'Italo De la Peña' }
 
@@ -11,7 +11,7 @@ describe('<TableCell />', () => {
     component = render(
       <table>
         <tbody>
-          <tr><TableCell label={td.label} data={td.data} /></tr>
+          <tr><ModalUserData label={td.label} data={td.data} /></tr>
         </tbody>
       </table>
     )
@@ -31,7 +31,7 @@ describe('<TableCell />', () => {
     component = render(
       <table>
         <tbody>
-          <tr><TableCell label={td.label} /></tr>
+          <tr><ModalUserData label={td.label} /></tr>
         </tbody>
       </table>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { TableCell } from '../TableCell'
+import { ModalUserData } from '../ModalUserData'
 
 export function ModalUserInformation ({ selectedUser }) {
   const streetName = selectedUser.location.street.name
@@ -18,20 +18,20 @@ export function ModalUserInformation ({ selectedUser }) {
           </td>
         </tr>
         <tr>
-          <TableCell label='Username' data={selectedUser.login.username} />
-          <TableCell label='Email address' data={selectedUser.email} />
+          <ModalUserData label='Username' data={selectedUser.login.username} />
+          <ModalUserData label='Email address' data={selectedUser.email} />
         </tr>
         <tr>
-          <TableCell label='First name' data={selectedUser.name.first} />
-          <TableCell label='Last name' data={selectedUser.name.last} />
+          <ModalUserData label='First name' data={selectedUser.name.first} />
+          <ModalUserData label='Last name' data={selectedUser.name.last} />
         </tr>
         <tr>
-          <TableCell label='Age' data={selectedUser.dob.age} />
-          <TableCell label='Cell' data={selectedUser.cell} />
+          <ModalUserData label='Age' data={selectedUser.dob.age} />
+          <ModalUserData label='Cell' data={selectedUser.cell} />
         </tr>
         <tr>
-          <TableCell label='Location' data={`${streetName} ${streetNumber}`} />
-          <TableCell label='Phone' data={selectedUser.phone} />
+          <ModalUserData label='Location' data={`${streetName} ${streetNumber}`} />
+          <ModalUserData label='Phone' data={selectedUser.phone} />
         </tr>
       </tbody>
     </table>
