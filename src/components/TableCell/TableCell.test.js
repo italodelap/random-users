@@ -28,7 +28,7 @@ describe('<TableCell />', () => {
   })
 
   test('renders alternative text', () => {
-    let component = render(
+    component = render(
       <table>
         <tbody>
           <tr><TableCell label={td.label} /></tr>
