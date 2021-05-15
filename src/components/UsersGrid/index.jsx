@@ -13,6 +13,7 @@ export function UsersGrid({ setSelectedUser, setModalIsOpen }) {
   const getUsers = async () => {
     const data = await fetch('https://randomuser.me/api/?results=50')
     const response = await data.json()
+    // ID por defecto para los usuarios con id === null ??
     const usersData = response.results.filter(user => user.id.value != null)
     setUsers([...users, ...usersData])
   }
